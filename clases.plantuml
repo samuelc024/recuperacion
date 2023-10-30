@@ -1,0 +1,32 @@
+@startuml
+class Biblioteca{
+    recursos:<RecursosBibliografico>
+    agregar_recurso()
+    buscar_recurso()
+}
+class Recursos_Bibliograficos{
+    tipo
+    titulo
+    codigo
+    autor
+    disponibilidad
+    mostrar_detalles()
+}
+class Libro{
+}
+class DVD{    
+}
+class Planos{
+}
+class Mapas{
+}
+class Fotografias{
+}
+
+
+Biblioteca "1" o-- "n" Recursos_Bibliograficos
+Recursos_Bibliograficos "1" o-- "n" Mapas
+Recursos_Bibliograficos "1" o-- "n" Planos
+Recursos_Bibliograficos "1" o-- "n" DVD
+Recursos_Bibliograficos "1" o-- "n" Fotografias
+Recursos_Bibliograficos "1" o-- "n" Libro
